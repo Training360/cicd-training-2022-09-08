@@ -53,3 +53,9 @@ docker run hello-world
 docker run --name nexus --detach --publish 8091:8081 --publish 8092:8082 sonatype/nexus3
 docker logs -f nexus
 ```
+
+Jelszó megszerzése:
+
+```
+docker exec -it nexus cat /nexus-data/admin.password
+```
