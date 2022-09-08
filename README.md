@@ -80,3 +80,44 @@ tartalommal:
 ```
 
 Kipróbálható `org\springframework` könyvtár letörlésével.
+
+# Nexus deploy
+
+`pom.xml`-t kell kiegészíteni:
+
+
+```xml
+<distributionManagement>
+    <snapshotRepository>
+        <id>nexus-snapshots</id>
+        <url>http://localhost:8091/repository/maven-snapshots/</url>
+    </snapshotRepository>
+</distributionManagement>
+```
+
+A `settings.xml` legyen ez:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+	 
+	 <servers>
+     <server>
+       <id>nexus-snapshots</id>
+       <username>admin</username>
+       <password>admin</password>
+     </server>
+   </servers>
+	 
+   <mirrors>
+    <mirror>
+      <id>central</id>
+      <name>central</name>
+      <url>http://localhost:8091/repository/maven-public/</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+  </mirrors>
+</settings>
+```
