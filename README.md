@@ -155,4 +155,4 @@ A `pom.xml`-be:
 mvnw package
 ```
 
-Elérhető lesz a `target/site/index.html` fájlban.
+Elérhető lesz a `target/site/jacoco/index.html` fájlban.
