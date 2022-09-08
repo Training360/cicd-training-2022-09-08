@@ -20,3 +20,9 @@ git commit -m "A szállító által adott első verzió"
 set JAVA_HOME=C:\Program Files\Java\jdk-17.0.4.1
 mvnw package
 ```
+
+## Alkalmazás indítása
+
+```
+java -jar target\employees-1.0-SNAPSHOT.jar
+```
