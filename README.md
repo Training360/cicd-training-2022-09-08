@@ -121,3 +121,5 @@ A `settings.xml` legyen ez:
   </mirrors>
 </settings>
 ```
+
+Deploy a Nexusba: `mvnw deploy`
