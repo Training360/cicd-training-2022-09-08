@@ -26,3 +26,5 @@ mvnw package
 ```
 java -jar target\employees-1.0-SNAPSHOT.jar
 ```
+
+Az alkalmazás elérhető a `http://localhost:8080/` címen.
