@@ -40,3 +40,9 @@ versions:display-dependency-updates
 ```
 net localgroup docker-users %USERDOMAIN%\%USERNAME% /add
 ```
+
+Kipróbálása:
+
+```
+docker run hello-world
+```
