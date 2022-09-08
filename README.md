@@ -34,3 +34,9 @@ Az alkalmazás elérhető a `http://localhost:8080/` címen.
 ```
 versions:display-dependency-updates 
 ```
+
+## Docker konfiguráció
+
+```
+net localgroup docker-users %USERDOMAIN%\%USERNAME% /add
+```
