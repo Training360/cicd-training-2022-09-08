@@ -203,3 +203,7 @@ spring.datasource.url=jdbc:mariadb://localhost/employees
 spring.datasource.username=employees
 spring.datasource.password=employees
 ```
+
+```
+docker exec -it it-mariadb mysql employees -e "select * from employees"  
+```
