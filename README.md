@@ -273,3 +273,9 @@ git push origin master
 ```
 docker exec -it gitlab-gitlab-runner-1 gitlab-runner register --non-interactive --url http://gitlab-gitlab-1 --registration-token 1QzzH9QrgGFgyARnvvVE --executor docker --docker-image docker:latest --docker-network-mode gitlab_default --clone-url http://gitlab-gitlab-1 --docker-volumes /var/run/docker.sock:/var/run/docker.sock
 ```
+
+# Fájl futtathatóvá tétele
+
+```
+git update-index --chmod=+x mvnw
+```
