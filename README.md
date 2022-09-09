@@ -250,3 +250,10 @@ docker login localhost:8092
 docker tag employees localhost:8092/employees
 docker push localhost:8092/employees
 ```
+
+# GitLab indítása
+
+```
+cd gitlab
+docker compose up -d
+```
