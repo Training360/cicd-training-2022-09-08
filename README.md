@@ -236,3 +236,9 @@ docker compose up --abort-on-container-exit
 ```
 docker run --name sonarqube -d -p 9000:9000 sonarqube:lts
 `
+
+My account/Security/Token
+
+```
+mvnw -Dsonar.login=[ide jön a token szögletesek nélkül] sonar:sonar
+```
