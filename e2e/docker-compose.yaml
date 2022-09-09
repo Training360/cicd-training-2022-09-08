@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  employees-it-mariadb:
+    image: mariadb
+    environment:
+      MYSQL_DATABASE: employees
+      MYSQL_USER: employees
+      MYSQL_PASSWORD: employees
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+
+  employees-it-app:
+    image: employees
+    depends_on:
+      - employees-it-mariadb
+    volumes:
+      - ./wait:/opt/wait
+    environment:
+      SPRING_DATASOURCE_URL: 'jdbc:mariadb://employees-it-mariadb/employees'
+      SPRING_DATASOURCE_USERNAME: employees
+      SPRING_DATASOURCE_PASSWORD: employees
+    entrypoint: ["/opt/wait/wait-for-it.sh", "-t", "120", "employees-it-mariadb:3306", "--", "java", "-jar", "employees.jar"]
+
+  employees-in-newman:
+    image: postman/newman:5-ubuntu
+    volumes:
+      - ./postman:/etc/newman
+      - ./wait:/opt/wait
+    depends_on:
+      - employees-it-app
+    entrypoint: ["/opt/wait/wait-for-it.sh", "-t", "120", "employees-it-app:8080", "--", "newman", "run", "Create_employee.postman_collection.json", "-e", "local.postman_environment.json", "-n", "10"]

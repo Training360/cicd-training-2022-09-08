@@ -224,3 +224,9 @@ docker stop my-employees
 docker rm my-employees
 docker run -p 8080:8080 -d --name my-employees employees
 ```
+
+# E2E tesztek futtatása
+
+```
+docker compose up --abort-on-container-exit
+```
