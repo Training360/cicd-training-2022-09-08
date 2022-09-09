@@ -258,3 +258,12 @@ cd gitlab
 docker compose up -d
 docker exec -it gitlab-gitlab-1 grep "Password" /etc/gitlab/initial_root_password
 ```
+
+# Push a GitLabra
+
+```
+git remote add origin http://localhost/gitlab-instance-4e231e23/employees.git
+git config --global user.name "FIRST_NAME LAST_NAME"
+git config --global user.email "MY_NAME@example.com"
+git push origin master
+```
