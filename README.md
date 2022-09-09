@@ -156,3 +156,36 @@ mvnw package
 ```
 
 Elérhető lesz a `target/site/jacoco/index.html` fájlban.
+
+## Integrációs tesztelés
+
+Fájlok átmásolása:
+
+```
+\src\test\java\employees\EmployeesControllerRestAssuredIT.java
+\src\test\resources\application.properties
+\src\test\resources\employee-dto.json
+```
+
+A `pom.xml` kiegészítése:
+
+```xml
+<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-failsafe-plugin</artifactId>
+			<version>2.22.2</version>
+			<executions>
+				<execution>
+					<goals>
+						<goal>integration-test</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+```
+
+Parancs:
+
+```
+mvnw verify
+```
