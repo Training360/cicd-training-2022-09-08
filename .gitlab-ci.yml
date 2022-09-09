@@ -4,8 +4,13 @@ stages:
 
 build-job:
   stage: build
+  image: openjdk:17.0.2
   script:
     - echo 'Ez a build lépés'
+    - ./mvnw package
+  artifacts:
+    paths:
+      - target/*.jar
 
 it-job:
   stage: it
