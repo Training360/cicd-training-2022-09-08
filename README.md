@@ -242,3 +242,11 @@ My account/Security/Token
 ```
 mvnw -Dsonar.login=[ide jön a token szögletesek nélkül] sonar:sonar
 ```
+
+# Docker push Nexusba
+
+```
+docker login localhost:8092
+docker tag employees localhost:8092/employees
+docker push localhost:8092/employees
+```
