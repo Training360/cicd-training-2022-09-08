@@ -230,3 +230,9 @@ docker run -p 8080:8080 -d --name my-employees employees
 ```
 docker compose up --abort-on-container-exit
 ```
+
+# SonarQube
+
+```
+docker run --name sonarqube -d -p 9000:9000 sonarqube:lts
+`
