@@ -1,0 +1,13 @@
+stages:
+  - build
+  - it
+
+build-job:
+  stage: build
+  script:
+    - echo 'Ez a build lépés'
+
+it-job:
+  stage: it
+  script:
+    - echo 'Ez az integrációs teszek lépés'
