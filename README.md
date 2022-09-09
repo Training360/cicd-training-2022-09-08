@@ -207,3 +207,11 @@ spring.datasource.password=employees
 ```
 docker exec -it it-mariadb mysql employees -e "select * from employees"  
 ```
+
+## Docker image készítése
+
+```
+docker build -t employees .
+docker run -p 8080:8080 -d --name my-employees employees
+docker logs -f my-employees
+```
