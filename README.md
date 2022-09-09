@@ -256,4 +256,5 @@ docker push localhost:8092/employees
 ```
 cd gitlab
 docker compose up -d
+docker exec -it gitlab-gitlab-1 grep "Password" /etc/gitlab/initial_root_password
 ```
