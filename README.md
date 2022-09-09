@@ -215,3 +215,12 @@ docker build -t employees .
 docker run -p 8080:8080 -d --name my-employees employees
 docker logs -f my-employees
 ```
+
+# Build is konténerben
+
+```
+docker build -t employees -f Dockerfile.build .
+docker stop my-employees
+docker rm my-employees
+docker run -p 8080:8080 -d --name my-employees employees
+```
